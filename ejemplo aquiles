@@ -1,0 +1,41 @@
+<tr ng-repeat="item in datosRefPersonales">
+                                                        <td class="hidden">{{item.RelReferenciaId}}</td>
+                                                        <td>
+                                                            <input type="checkbox" ng-checked="{{item.EsReferido}}" ng-model="item.EsReferido" ng-disabled="!item.editing" />
+                                                        </td>
+                                                        <td>
+                                                            <span ng-if="!item.editing">{{(vm.parentezcos | filter:({id:item.CatParentezcoId}))[0].descripcion}}</span>
+                                                            <select class="form-control" ng-if="item.editing" ng-model="item.CatParentezcoId" ng-options="parent.id as parent.descripcion for parent in vm.parentezcos track by parent.id">
+                                                                <option value="">Seleccione</option>
+                                                            </select>
+                                                        </td>
+                                                        <td>
+                                                            <span ng-if="!item.editing">{{(vm.direcciones | filter:({id:item.CatTipoDireccionId}))[0].descripcion}}</span>
+                                                            <select class="form-control" ng-if="item.editing" ng-model="item.CatTipoDireccionId" ng-options="dir.id as dir.descripcion for dir in vm.direcciones track by dir.id">
+                                                                <option value="">Seleccione</option>
+                                                            </select>
+                                                        </td>
+                                                        <td>
+                                                            <span ng-if="!item.editing">{{item.PrimerNombre}}</span>
+                                                            <input type="text" class="form-control" ng-model="item.PrimerNombre" ng-if="item.editing" />
+                                                        </td>
+                                                        <td>
+                                                            <span ng-if="!item.editing">{{item.PrimerApellido}}</span>
+                                                            <input type="text" class="form-control" ng-model="item.PrimerApellido" ng-if="item.editing" />
+                                                        </td>
+                                                        <td>
+                                                            <span ng-if="!item.editing">{{item.Telefono}}</span>
+                                                            <input type="number" class="form-control" ng-model="item.Telefono" ng-if="item.editing" />
+                                                        </td>
+                                                        <td>
+                                                            <button class="btn-fila btn btn-primary" type="button" ng-disabled="!item.editing" ng-click="item.editing=false; guardarRefPer($index,item)" title="Guardar">
+                                                                <i class="glyphicon glyphicon-floppy-disk"></i>
+                                                            </button>
+                                                            <button class="btn-fila btn btn-info" type="button" ng-disabled="item.editing" ng-click="item.editing=true; editarRefPer($index,item)" title="Editar">
+                                                                <i class="glyphicon glyphicon-edit"></i>
+                                                            </button>
+                                                            <button class="btn-fila btn btn-warning" ng-if="item.editing" type="button" ng-click="item.editing=false; cancelarRefPer($index,item)" title="Cancelar">
+                                                                <i class="glyphicon glyphicon-minus"></i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>

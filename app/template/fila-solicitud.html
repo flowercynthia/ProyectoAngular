@@ -1,0 +1,32 @@
+
+	<td>
+		{{solicitud.afiliado.nombre}}
+	</td>
+	<td>
+		{{solicitud.afiliado.direccion}}
+	</td>
+	<td>
+		{{solicitud.afiliado.telefono}}
+	</td>
+	<td>
+		{{solicitud.afiliado.correo}}
+	</td>
+	<td>
+		{{solicitud.afiliado.noSucursales}}
+	</td>
+	<td>
+		{{solicitud.afiliado.horariosAtencion}}
+	</td>
+	<td>
+		{{solicitud.fecha}}
+	</td>
+	<td>
+		<button ng-click="solicitud.estado = 'aceptada'"><i class="glyphicon glyphicon-ok"></i>
+			 Aceptar			 
+		</button>
+	</td>
+	<td>
+		<button ng-click="solicitud.estado = 'rechazada'"><i class="glyphicon glyphicon-remove"></i>
+			Rechazar
+		</button>
+	</td>

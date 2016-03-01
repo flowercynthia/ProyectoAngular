@@ -1,0 +1,25 @@
+
+			<div class="col-md-12 center-block"  ng-controller='solicitudController as controllerSol'>				
+                           <h1 class="text-center">Admin Punto Facil</h1>
+						    <table class="table table-bordered">
+						        <thead>
+						            <tr>						                
+						                <th>Nombre</th>
+						                <th>Direcci&oacute;n</th>
+						                <th>Tel&eacute;fono</th>
+						                <th>Correo</th>
+						                <th>No. Sucursales</th>
+						                <th>Horarios de atenci&oacute;n</th>
+						                <th>Fecha de solicitud</th>
+						                <th colspan = "2">Estado</th>
+						            </tr>
+						        </thead>
+						        <tbody>
+									<!-- <fila-solicitud ng-repeat="solicitud in controllerSol.solicitudes"> -->
+									<tr ng-class="solicitud.estado == 'pendiente' ? 'info' : (solicitud.estado == 'aceptada' ? 'success' : 'danger')"
+									fila-solicitud
+									ng-repeat="solicitud in controllerSol.solicitudes"
+									></tr>
+						        </tbody>
+						    </table>
+			</div>

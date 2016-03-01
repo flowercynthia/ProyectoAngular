@@ -1,0 +1,39 @@
+<div class="row">
+                <div class="col-md-6 center-block" ng-controller = "solicitudController as controlarSolicitud">
+                    <form id="formulario" class="form-horizontal">
+                        <fieldset>
+                            <legend class="text-center"> <img src="images/favicon.png">Solicitud de Afiliaci&oacute;n</legend>
+                            <div class="form-group col-md-11 center-block">
+                                <label for="exampleInputEmail1">Nombre del Afiliado</label>
+                                <input type="text" class="form-control" id="exampleInputEmail1" ng-model="solicitud.afiliado.nombre" 
+                                placeholder="Ej. Punto Facil">
+                            </div>
+                            <div class="form-group col-md-11 center-block">
+                                <label for="exampleInputEmail1">Correo</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" ng-model="solicitud.afiliado.correo" placeholder="Ej. example@gmail.com">
+                            </div>
+                            <div class="form-group col-md-11 center-block">
+                                <label for="exampleInputPassword1">Direcci&oacute;n</label>
+                                <input class="form-control" type="text" ng-model="solicitud.afiliado.direccion" placeholder="Ej. De la Rotonda Centroamerica...">
+                            </div>
+                              <div class="form-group col-md-11 center-block">
+                                <label for="exampleNoSucursales">Tel&eacute;fono</label>
+                                <input class="form-control" type="text" ng-model="solicitud.afiliado.telefono" placeholder="Ej. 84503065" min="1">
+                            </div>
+                             <div class="form-group col-md-11 center-block">
+                                <label for="exampleNoSucursales">Horarios de atenci&oacute;n</label>
+                                <input class="form-control" ng-model="solicitud.afiliado.horariosAtencion" type="te" min="1">
+                            </div>
+                            <div class="form-group col-md-11 center-block">
+                                <label for="exampleNoSucursales">No. de Sucursales</label>
+                                <input class="form-control" type="number" ng-model="solicitud.afiliado.noSucursales" min="1">
+                            </div>
+                            <div class="form-group col-md-11 center-block">
+                                <button class="pull-right btn btn-success" type="button"  title="enviar" rel="tooltip" ng-click="controlarSolicitud.addSolicitud(solicitud)">
+                                <i class="glyphicon glyphicon-send"></i> Enviar
+                                </button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>

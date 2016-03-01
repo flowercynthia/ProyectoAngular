@@ -1,0 +1,10 @@
+.col-md-6.center-block, .col-md-11.center-block
+{
+	float:none;
+	margin-right: auto;
+    margin-left: auto;
+}
+#formulario {
+        box-shadow: inset 2px 2px #e53d3d, inset 4px 4px #3d57e5, inset -2px -2px #e53d3d, inset -4px -4px #3d57e5;
+    padding-top: 10px;
+}
